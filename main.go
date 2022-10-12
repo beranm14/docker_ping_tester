@@ -32,7 +32,8 @@ func main() {
 		}
 		data, _ := ioutil.ReadAll(res.Body)
 		res.Body.Close()
-		fmt.Fprintf(w, "Called %s, got %d bytes\n", call_url, len(data))
+		fmt.Fprintf(w, "Called %s, got %d bytes:\n\n", call_url, len(data))
+		fmt.Fprintf(w, "%s", data)
 	})
 
 	log.Println("Listening on port", app_port)
